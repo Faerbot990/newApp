@@ -33,15 +33,15 @@ public class AdminController {
     @Value("${upload.path}")
     private String uploadPath;
 
-    private final UserService userService;
+
 
     private final ProductService productService;
 
     private final OrderService orderService;
 
     @Autowired
-    public AdminController(UserService userService, ProductService productService, OrderService orderService) {
-        this.userService = userService;
+    public AdminController(ProductService productService, OrderService orderService) {
+
         this.productService = productService;
         this.orderService = orderService;
     }
@@ -98,19 +98,6 @@ public class AdminController {
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
-    @GetMapping("/admin/user/{id}")
-    public ResponseEntity<?> getUser(@PathVariable("id") Long userId) {
-        User user = userService.getOne(userId);
-
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    }
-
-    @GetMapping("/admin/user/all")
-    public ResponseEntity<?> getAllUsers() {
-        List<User> users = userService.findAll();
-
-        return new ResponseEntity<>(users, HttpStatus.OK);
-    }
 
 
     private void saveFile(Product product, @RequestParam("file") MultipartFile file) throws IOException {

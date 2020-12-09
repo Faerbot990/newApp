@@ -39,7 +39,7 @@ public class OrderController {
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
-    @PostMapping("/order")
+    @PostMapping("/order_add")
     public ResponseEntity<?> addOrder(
             @AuthenticationPrincipal User userSession,
             @Valid @RequestBody Order validOrder,
