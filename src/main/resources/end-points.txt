@@ -1,0 +1,27 @@
+Admin
+
+POST /admin/add_prod - добавить товар
+POST /admin/update_prod - изменить товар
+GET /admin/orders - заказы
+
+Сart
+
+GET /cart -  корзинa
+POST /cart/add - добавить товар в корзину
+POST /cart/remove - убрать товар из корзины
+
+Order
+
+GET /order - показать заказ
+POST /order_add - Добавить заказ
+GET /order/finalize - завершить заказ
+GET /order/list - список заказов
+
+Menu
+
+POST /menu/search - поиск (фильтер)
+POST /menu/category - категории
+
+Main 
+
+GET /product/{id} - список товаров
